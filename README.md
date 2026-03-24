@@ -94,13 +94,19 @@ output/result.txt
 Example output format:
 
 ```
-https://example.com
-  - https://example.com/about
-  - https://example.com/contact
-
-https://scala-lang.org
-  - https://docs.scala-lang.org
-  - https://scala-lang.org/download
+https://www.techcrunch.com
+ - https://techcrunch.com
+ - https://techcrunch.com
+ ...
+ https://www.cloudflare.com
+ - https://www.cloudflare.com/
+ - https://dash.cloudflare.com/login
+ ...
+https://www.w3.org
+ - https://www.w3.org#main
+ - https://www.w3.org/press-releases/2025/new-logo/ 
+...
+etc
 ```
 
 ## Running Tests
