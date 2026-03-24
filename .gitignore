@@ -1,0 +1,116 @@
+# =========================
+
+# SBT / Scala build outputs
+
+# =========================
+
+target/
+project/target/
+project/project/
+project/metals.sbt
+project/.bloop/
+
+# Bloop
+
+.bloop/
+
+# Metals (Scala language server)
+
+.metals/
+
+# Scala CLI
+
+.scala-build/
+
+# =========================
+
+# Dependency caches
+
+# =========================
+
+# Ivy
+
+.ivy2/
+
+# Coursier
+
+.coursier/
+
+# =========================
+
+# IntelliJ IDEA
+
+# =========================
+
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.bsp/
+
+# =========================
+
+# VS Code
+
+# =========================
+
+.vscode/
+
+# =========================
+
+# Logs
+
+# =========================
+
+*.log
+
+# =========================
+
+# MacOS
+
+# =========================
+
+.DS_Store
+
+# =========================
+
+# Windows
+
+# =========================
+
+Thumbs.db
+Desktop.ini
+
+# =========================
+
+# Test artifacts / local data
+
+# =========================
+
+tmp/
+temp/
+*.tmp
+
+# =========================
+
+# Runtime generated files
+
+# =========================
+
+output/
+build/
+
+# Ignore local input/output files used during development
+
+input/
+output/
+
+# =========================
+
+# JVM crash logs
+
+# =========================
+
+hs_err_pid*
+
