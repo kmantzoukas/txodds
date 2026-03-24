@@ -101,11 +101,6 @@ temp/
 output/
 build/
 
-# Ignore local input/output files used during development
-
-input/
-output/
-
 # =========================
 
 # JVM crash logs
