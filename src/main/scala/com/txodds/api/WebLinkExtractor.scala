@@ -1,6 +1,5 @@
 package com.txodds.api
 
-import com.txodds.api.WebLinkExtractor._
 import com.txodds.model.{Partition, WebExtract}
 import com.txodds.utils.TxOddsUtils.writeLinesToFile
 import org.jsoup.nodes.Document
@@ -15,17 +14,14 @@ import scala.jdk.CollectionConverters.CollectionHasAsScala
 import scala.util.{Try, Using}
 
 object WebLinkExtractor {
-  private val QUEUE_SIZE_DEFAULT = 20
-  private val NUM_OF_PRODUCERS_DEFAULT = 5
-  private val NUM_OF_CONSUMERS_DEFAULT = 1
 }
 
 class WebLinkExtractor(
                         inputFile: String,
                         outputFile: String,
-                        queueSize: Int = QUEUE_SIZE_DEFAULT,
-                        numOfProducers: Int = NUM_OF_PRODUCERS_DEFAULT,
-                        numOfConsumers: Int = NUM_OF_CONSUMERS_DEFAULT
+                        queueSize: Int,
+                        numOfProducers: Int,
+                        numOfConsumers: Int
                       )(implicit ec: ExecutionContext) {
 
   require(queueSize > 0, "Queue size must be greater than 0")
@@ -35,8 +31,9 @@ class WebLinkExtractor(
   private val queue: BlockingQueue[WebExtract] = new LinkedBlockingQueue(queueSize)
   private val urls: List[String] = Using(Source.fromFile(inputFile))(source => source.getLines().toList).get
   private val uuid = UUID.randomUUID().toString
-  private val outputFolder: String = Option(new File(outputFile).getParent).getOrElse(".")
-  //private val numOfUrlsPerThread: Int = if (urls.size % numOfProducers == 0) urls.size / numOfProducers else (urls.size / numOfProducers) + 1
+  private val outputFolderFile: File = new File(Option(new File(outputFile).getParent).getOrElse("."))
+  outputFolderFile.mkdirs()
+  private val outputFolder: String = outputFolderFile.getPath
   private val numOfUrlsPerThread: Int = math.max(1, (urls.size + numOfProducers - 1) / numOfProducers)
   private val partitions: Seq[Partition] = urls.grouped(numOfUrlsPerThread).zipWithIndex.toSeq.map {
     case (data, partitionNumber) => Partition(data, partitionNumber)

@@ -1,0 +1,1 @@
+sbt "run --input input/urls.txt --output output/result.txt --producers 20 --consumers 10 --queue 200"
