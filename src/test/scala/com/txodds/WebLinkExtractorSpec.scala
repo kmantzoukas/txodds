@@ -50,7 +50,9 @@ class WebLinkExtractorSpec extends AnyFunSuite with Matchers with BeforeAndAfter
       new WebLinkExtractor(
         inputFile = input,
         outputFile = output,
-        queueSize = 0
+        queueSize = 0,
+        numOfProducers = 2,
+        numOfConsumers = 1
       )
     }
 
@@ -68,7 +70,9 @@ class WebLinkExtractorSpec extends AnyFunSuite with Matchers with BeforeAndAfter
       new WebLinkExtractor(
         inputFile = input,
         outputFile = output,
-        numOfProducers = 0
+        numOfProducers = 0,
+        numOfConsumers = 1,
+        queueSize = 10
       )
     }
 
@@ -86,7 +90,9 @@ class WebLinkExtractorSpec extends AnyFunSuite with Matchers with BeforeAndAfter
       new WebLinkExtractor(
         inputFile = input,
         outputFile = output,
-        numOfConsumers = 0
+        numOfConsumers = 0,
+        numOfProducers = 1,
+        queueSize = 10
       )
     }
 
