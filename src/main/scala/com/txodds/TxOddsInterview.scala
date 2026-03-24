@@ -13,7 +13,7 @@ object TxOddsInterview extends App {
     }.toMap
 
   private val inputFile = mapOfArgs.getOrElse("input", "input/urls.txt")
-  private val outputFile = mapOfArgs.getOrElse("output", "output/hrefs-per-url.txt")
+  private val outputFile = mapOfArgs.getOrElse("output", "output/result.txt")
   private val numProducers = mapOfArgs.get("producers").map(_.toInt).getOrElse(10)
   private val numConsumers = mapOfArgs.get("consumers").map(_.toInt).getOrElse(5)
   private val queueSize = mapOfArgs.get("queue").map(_.toInt).getOrElse(100)
