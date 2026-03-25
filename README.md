@@ -96,7 +96,7 @@ Example output format:
 ```
 https://www.techcrunch.com
  - https://techcrunch.com
- - https://techcrunch.com
+ - https://techcrunch.com/latest/
  ...
  https://www.cloudflare.com
  - https://www.cloudflare.com/
