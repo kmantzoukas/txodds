@@ -1,4 +1,4 @@
-package com.txodds.utils
+package com.producer.consumer.utils
 
 import java.nio.charset.{Charset, StandardCharsets}
 import java.nio.file.{Files, Paths, StandardOpenOption}

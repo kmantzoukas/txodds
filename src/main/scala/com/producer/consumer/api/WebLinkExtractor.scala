@@ -1,7 +1,7 @@
-package com.txodds.api
+package com.producer.consumer.api
 
-import com.txodds.model.{Partition, WebExtract}
-import com.txodds.utils.TxOddsUtils.writeLinesToFile
+import com.producer.consumer.model.{Partition, WebExtract}
+import com.producer.consumer.utils.TxOddsUtils.writeLinesToFile
 import org.jsoup.nodes.Document
 
 import java.io.{File, PrintWriter}

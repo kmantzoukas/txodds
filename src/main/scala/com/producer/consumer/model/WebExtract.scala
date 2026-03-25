@@ -1,4 +1,4 @@
-package com.txodds.model
+package com.producer.consumer.model
 
 import org.jsoup.nodes.Document
 

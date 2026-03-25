@@ -1,5 +1,6 @@
-import com.txodds.api.WebLinkExtractor
+package com.producer.consumer
 
+import com.producer.consumer.api.WebLinkExtractor
 import java.util.concurrent.Executors
 import scala.concurrent.duration.{Duration, SECONDS}
 import scala.concurrent.{Await, ExecutionContext, Future}

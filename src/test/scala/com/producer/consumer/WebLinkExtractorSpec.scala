@@ -1,5 +1,6 @@
-package com.txodds.api
+package com.producer.consumer
 
+import com.producer.consumer.api.WebLinkExtractor
 import okhttp3.mockwebserver.{MockResponse, MockWebServer}
 import org.scalatest.BeforeAndAfterEach
 import org.scalatest.funsuite.AnyFunSuite
