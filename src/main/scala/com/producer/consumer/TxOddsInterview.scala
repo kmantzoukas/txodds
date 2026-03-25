@@ -20,19 +20,6 @@ object TxOddsInterview extends App {
   private val queueSize = mapOfArgs.get("queue").map(_.toInt).getOrElse(100)
   private val threadPoolSize = mapOfArgs.get("threads").map(_.toInt).getOrElse(16)
 
-  println(
-    s"""
-       |Configuration
-       |-------------
-       |Input file:        $inputFile
-       |Output file:       $outputFile
-       |Queue size:        $queueSize
-       |Num of Producers:  $numProducers
-       |Num of Consumers:  $numConsumers
-       |Thread pool:       $threadPoolSize
-       |""".stripMargin
-  )
-
   private val executor = Executors.newFixedThreadPool(threadPoolSize)
   implicit private val ec: ExecutionContext = ExecutionContext.fromExecutor(executor)
 
