@@ -75,7 +75,7 @@ class WebLinkExtractor(
 
             case WebExtract(url, Right(doc)) =>
               println(s"Consumer with id $id is processing URL: $url")
-              val hrefList = doc.select("a[href]").eachAttr("abs:href").asScala.toSeq
+              val hrefList = doc.select("a[href]").eachAttr("abs:href").asScala.toSeq.distinct
               writeLinesToFile(outputFileFullPath, Iterator(s"$url"))
               hrefList.foreach(href => writeLinesToFile(outputFileFullPath, Iterator(s" - $href")))
 
