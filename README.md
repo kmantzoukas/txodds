@@ -1,4 +1,4 @@
-# TxOdds Interview – Web Link Extractor
+# Interview – Web Link Extractor
 
 ## Overview
 
