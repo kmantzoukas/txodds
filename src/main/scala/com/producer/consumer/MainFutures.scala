@@ -5,7 +5,7 @@ import java.util.concurrent.Executors
 import scala.concurrent.duration.{Duration, SECONDS}
 import scala.concurrent.{Await, ExecutionContext, Future}
 
-object TxOddsInterview extends App {
+object MainFutures extends App {
 
   private val mapOfArgs: Map[String, String] =
     args.sliding(2, 2).collect {
